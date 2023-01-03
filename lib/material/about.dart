@@ -16,18 +16,28 @@ class About extends StatelessWidget {
         backgroundColor: Colors.white,
         child: Column(
           children: [
-            Container(
-                margin: const EdgeInsets.only(top: 50, bottom: 10),
-                // ignore: prefer_const_constructors
-                child: Text(
-                  "I am",
-                  style: const TextStyle(fontSize: 30),
-                )),
-
-            SizedBox(
-              width: 150,
-              child: Image.asset("images/Anya_Anya.jpg"),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                    color: Colors.blue,
+                    width: 300,
+                    height: 50,
+                    margin: EdgeInsets.only(top: 25, bottom: 25),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "My Profile",
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
+                    )),
+                CircleAvatar(
+                  radius: 75.0,
+                  backgroundImage: AssetImage('images/Anya_Anya.jpg'),
+                ),
+              ],
             ),
+
             // ignore: prefer_const_constructors
             SizedBox(height: 20),
             ListTile(
@@ -68,52 +78,68 @@ class About extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 20),
             Text(
               'Hello!',
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),
-            SizedBox(
-              height: 100,
-              width: 100,
-              child: Image.asset("images/Anya.jpg"),
+            CircleAvatar(
+              radius: 75.0,
+              foregroundImage: AssetImage('images/Anya.jpg'),
             ),
             SizedBox(
               height: 10,
             ),
             Text(
               ' My name is Wisfie Syahbani',
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 25,
             ),
-            Text(
-              "Saya adalah Lulusan SMK dari Tangerang pada tahun 2020. Saya selalu tertantang dengan proyek baru dalam pembuatan Web dan semacamnya.",
-              style: TextStyle(fontSize: 15),
+            Container(
+              margin: EdgeInsets.all(4.0),
+              padding: EdgeInsets.all(17.0),
+              decoration: BoxDecoration(color: Colors.grey.shade200),
+              child: Text(
+                "Saya adalah Lulusan SMK dari Tangerang pada tahun 2020. Saya selalu tertantang dengan proyek baru dalam pembuatan Web dan semacamnya.",
+                style: TextStyle(fontSize: 15),
+              ),
             ),
             Column(
               children: const [
                 ListTile(
-                  title: Text('Date of Birth'),
+                  leading: Icon(
+                    Icons.circle,
+                    size: 25,
+                  ),
+                  title: Text('Date of Birth    :'),
                   trailing: Text('01/01/1999'),
                 ),
                 ListTile(
-                  title: Text('Nationality'),
+                  leading: Icon(
+                    Icons.circle,
+                    size: 25,
+                  ),
+                  title: Text('Nationality       :'),
                   trailing: Text('Indonesian'),
                 ),
                 ListTile(
-                  title: Text('Interest'),
+                  leading: Icon(
+                    Icons.circle,
+                    size: 25,
+                  ),
+                  title: Text('Interest             :'),
                   trailing: Text('Programming'),
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 30),
             Text(
-              'I hope you find this information useful.                             Thank you for visiting my page!',
+              'Sekilas tentang diri saya.                                                 Thank you for visiting my page!',
             ),
           ],
         ),
